@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Étude sur une demande de crédit</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="../static/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.ico">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Applicant form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Demande de crédit</h2>
+                        <form action="/prediction" method="POST" class="register-form" id="register-form">
+                            <h3>Identité</h3>
+                            <!-- Name -->
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="name" placeholder="Nom,Prénom" required/>
+                            </div>
+                            
+                            <!-- Birthdate -->
+                            <div class="form-group">
+                                <label for="birthdate"><i class="zmdi zmdi-calendar"></i></label>
+                                <input type="date" name="birthdate" id="birthdate" placeholder="Your Birthdate" required/>
+                            </div>
+                            
+                            <!-- Genre -->
+                            <div class="form-group">
+                                <label for="genre"><i class="zmdi zmdi-accounts"></i></label>
+                                <select name="genre" id="genre" placeholder="Genre" required>
+                                    <option value="" disabled selected>Genre</option>
+                                    <option value="1">Homme</option>
+                                    <option value="0">Femme</option>
+                                    <option value="2">Autre</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Nombre Enfants -->
+                            <div class="form-group">
+                                <label for="nombre_enfants"><i class="zmdi zmdi-accounts"></i></label>
+                                <input type="number" min="0" name="nombre_enfants" placeholder="Nombre Enfants" required/>
+                            </div>
+
+                            <!-- Nombre Famille Membre -->
+                            <div class="form-group">
+                                <label for="nombre_famille_membre"><i class="zmdi zmdi-accounts"></i></label>
+                                <input type="number" min="1" name="nombre_famille_membre" placeholder="Nombre Famille Membre" required/>
+                            </div>
+
+                            <!-- Statut Marital  -->
+                            <div class="form-group">
+                                <label for="statut_marital"><i class="zmdi zmdi-accounts-alt"></i></label>
+                                <select name="statut_marital" id="statut_marital" placeholder="Statut Marital" required>
+                                    <option value="" disabled selected>Statut Marital</option>
+                                    <option value="0">Marié</option>
+                                    <option value="1">Non Marié</option>
+                                    <option value="2">Autre</option>
+                                </select>
+                            </div>
+
+                            <!-- Niveau Education -->
+                            <div class="form-group">
+                                <label for="education"><i class="zmdi zmdi-book"></i></label>
+                                <select name="education" id="education" placeholder="Niveau Education" required>
+                                    <option value="" disabled selected>Niveau Education</option>
+                                    <option value="1">Études Moyennes</option>
+                                    <option value="0">Études Supérieures </option>
+                                </select>
+                            </div>
+
+                            <!-- Situation Logement -->
+                            <div class="form-group">
+                                <label for="situation_logement"><i class="zmdi zmdi-case"></i></label>
+                                <select name="situation_logement" id="situation_logement" placeholder="Situation Logement" required>
+                                    <option value="" disabled selected>Situation Logement</option>
+                                    <option value="1">Avec Parents</option>
+                                    <option value="0">Appartement</option>
+                                </select>
+                            </div>
+
+                            <!-- Possession Maison -->
+                            <div class="form-group">
+                                <label for="possession_maison"><i class="zmdi zmdi-case"></i></label>
+                                <select name="possession_maison" id="possession_maison" placeholder="Possession Maison?" required>
+                                    <option value="" disabled selected>Possession Maison?</option>
+                                    <option value="1">Oui</option>
+                                    <option value="0">Non</option>
+                                </select>
+                            </div>
+
+                            <!-- Possession Voiture -->
+                            <div class="form-group">
+                                <label for="possession_voiture"><i class="zmdi zmdi-case"></i></label>
+                                <select name="possession_voiture" id="possession_voiture" placeholder="Possession Voiture?" required>
+                                    <option value="" disabled selected>Possession Voiture?</option>
+                                    <option value="1">Oui</option>
+                                    <option value="0">Non</option>
+                                </select>
+                            </div>
+                                                
+                            <h3>Informations sur le crédit</h3>
+                            <!-- Montant Total Crédits -->
+                            <div class="form-group">
+                                <label for="montant_total_crédits"><i class="zmdi zmdi-money"></i></label>
+                                <input type="number" min="0" name="montant_total_crédits" placeholder="Montant Total Crédits (USD)" required/>
+                            </div>
+
+                            <!-- Revenu Total -->
+                            <div class="form-group">
+                                <label for="revenu_total"><i class="zmdi zmdi-money"></i></label>
+                                <input type="number" min="0" name="revenu_total" placeholder="Revenu Total" required/>
+                            </div>
+
+                            <!-- Nombre Echéances Impayées -->
+                            <div class="form-group">
+                                <label for="échéances_impayées"><i class="zmdi zmdi-money"></i></label>
+                                <input type="number" min="0" name="échéances_impayées" placeholder="Nombre Echéances Impayées" required/>
+                            </div>
+
+                            <!-- Origine des Revenus -->
+                            <div class="form-group">
+                                <label for="origine_revenu"><i class="zmdi zmdi-money"></i></label>
+                                <select name="origine_revenu" id="origine_revenu" placeholder="Origine des Revenus" required>
+                                    <option value="" disabled selected>Origine des Revenus</option>
+                                    <option value="1">Avec Emploi</option>
+                                    <option value="0">Sans Emploi</option>
+                                </select>
+                            </div>
+
+                            <!-- Type de Crédit -->
+                            <div class="form-group">
+                                <label for="type_crédit"><i class="zmdi zmdi-money"></i></label>
+                                <select name="type_crédit" id="type_crédit" placeholder="Type de Crédit" required>
+                                    <option value="" disabled selected>Type de Crédit</option>
+                                    <option value="1">Consommation</option>
+                                    <option value="0">Trésorerie</option>
+                                </select>
+                            </div>
+
+                            <!-- Situation du Crédit -->
+                            <div class="form-group">
+                                <label for="situation_crédit"><i class="zmdi zmdi-money"></i></label>
+                                <select name="situation_crédit" id="situation_crédit" placeholder="Situation du Crédit" required>
+                                    <option value="" disabled selected>Situation du Crédit</option>
+                                    <option value="1">Fermé</option>
+                                    <option value="0">Actif</option>
+                                    <option value="2">Vendu</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>J'accepte toutes les déclarations dans  <a href="#" class="term-service">les conditions d'utilisation</a></label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Check Status"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="../static/images/signup-image.jpg" alt="sing up image"></figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    </div>
+
+</body>
+</html>
